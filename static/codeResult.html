@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>付钱吧~老铁（PS：脸上有微笑，心里有逼数）</div>
+    <button class="pay">付款</button>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    var socket = io();
+    $('.pay').click(function () {
+        socket.emit('pay', '支付成功');//客户端发送“支付成功”事件
+        return false;
+    });
+</script>
+
+</html>
